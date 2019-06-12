@@ -46,3 +46,6 @@ To use this application, you must have Node and Express.js installed. This can b
       <li> View upcoming cleanings </li>
       <li> Leave feedback </li>
     </ul>
+</ul>
+
+![Output](https://j.gifs.com/WLw85J.gif)
