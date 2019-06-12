@@ -48,4 +48,4 @@ To use this application, you must have Node and Express.js installed. This can b
     </ul>
 </ul>
 
-![Output](https://j.gifs.com/WLw85J.gif)
+![Here](https://j.gifs.com/81o9wo.gif)
