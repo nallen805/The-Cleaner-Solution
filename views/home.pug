@@ -1,0 +1,20 @@
+extends layout
+block append head
+    script(src='/javascripts/jquery-3.3.1.js')
+    script(src='/javascripts/bootstrap.js')
+block content
+    #contentMsg
+        h4 Your only stop for the best cleaning services!! Check us out!!
+    .register
+        a(href='/register') Register Here
+    .login
+        a(href='/login') Login Here
+    #carouselPicsContainer.carousel.slide.container(data-ride='carousel')
+        .carousel-inner
+            .carousel-item.active
+                img.d-block.w-100(src='/images/clean1.jpg')
+            .carousel-item
+                img.d-block.w-100(src='/images/clean2.jpg')
+            .carousel-item
+                img.d-block.w-100(src='/images/clean3.jpg')
+    a(href='/adminLogin') Admin  

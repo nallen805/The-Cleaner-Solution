@@ -1,0 +1,36 @@
+//- Business Services.pug
+
+extends layout
+block append head
+    script(src='/javascripts/jquery-3.3.1.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/jsFunctions.js')
+block content
+    .row
+        .col
+            h4.display-4 Commercial Cleaning
+            p.
+                We clean office buildings, and we clean them well! We can clean partial office buildings for our
+                customers who share spaces. We do rug and carpet shampooing, as well as window washing. We will clean
+                your entire office from top to bottom, and everything in between. Check us out!
+            button.btn#cleanOffice(onClick='cleanOffice()')|Clean my Office
+    .row
+        .col
+            #showOfficeServices
+                h3 Office Services 
+                table.table-responsive.table-striped
+                    thead
+                        tr
+                            th Services Offered
+                            th Area(s) Treated
+                            th Click for more info
+                    tbody
+                    each service in serviceOffered 
+                        tr#tableRows
+                            td#servName #{service.service}
+                            td#servArea #{service.area}
+                            td#test 
+                                - var nameOfService = `${service.service}`;
+                                - var serviceArea = `${service.area}`;
+                                input(type='radio' id="radioSelection" name="selection" value=`${nameOfService}` onchange='displayServiceDetails();') 
+                #serviceMsg

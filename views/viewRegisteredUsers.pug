@@ -1,0 +1,17 @@
+//- Display all registered users 
+
+extends layout
+block content
+    h4 Registered Users
+    .container
+        each ru in regUsr
+            .row
+                .col #{ru.firstname}
+                .col #{ru.lastname}
+                .col #{ru.email}
+                .col #{ru.phone}
+                .col #{ru.username}
+                .col #{ru.password}
+                .col #{ru.selection}
+            hr 
+    a(href='/adminSuccess') Back 

@@ -1,0 +1,72 @@
+//- Redo this entire page --- too many complications trying to keep everything on one page --- come back with better idea
+
+extends layout
+block append head
+    script(src='/javascripts/jquery-3.3.1.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/jsFunctions.js')
+block content
+    .row
+        .col
+            h4.display-4 Commercial Cleaning
+            p.
+                We clean office buildings, and we clean them well! We can clean partial office buildings for our
+                customers who share spaces. We do rug and carpet shampooing, as well as window washing. We will clean
+                your entire office from top to bottom, and everything in between. Check us out!
+            button.btn#cleanOffice(onClick='cleanOffice()')|Clean my Office
+        .col
+            h4.display-4 Residential Cleaning
+            p.
+                We don't just clean office buildings. We can come clean your residence as well!! We can do one time clean
+                ups, or we can come up with a semi-permanent, or permanent cleaning plan. We are your Cleaner Solution! Come
+                to us for your cleaning!!
+            button.btn#cleanResidence(onClick='cleanResidence()')|Clean my Residence 
+    hr
+    .row.center
+        .col-md
+            img.image-responsive.images(src='/images/office.png')
+        .col.md
+            img.image-responsive.images(src='/images/cleaner.png')
+        .col.md
+            img.image-responsive.images(src='/images/residence.png')
+    hr
+    .row
+        .col
+            #showOfficeServices
+                h3 Office Services 
+                table.table-responsive.table-striped
+                    thead
+                        tr
+                            th Services Offered
+                            th Area(s) Treated
+                            th Click for more info
+                    tbody
+                    each service in serv 
+                        tr#tableRows
+                            td#servName #{service.serviceName}
+                            td#servArea #{service.serviceArea}
+                            td 
+                                - var nameOfService = `${service.serviceName}`;
+                                - var serviceArea = `${service.serviceArea}`;
+                                input(type='radio' id="radioSelection" name="selection" value=`${nameOfService}` onchange='displayServiceDetails();') 
+
+                #serviceMsg  
+        .col
+            #showResidentialServices
+                h3 Residential Services
+                table.table-responsive.table-striped
+                    thead
+                        tr
+                            th Services Offered
+                            th Area(s) Treated
+                            th Click for more info 
+                    tbody
+                    each service in serv
+                        tr
+                            td #{service.serviceName}
+                            td #{service.serviceArea}
+                            td
+                                - var nameOfService = `${service.serviceName}`;
+                                - var serviceArea = `${service.serviceArea}`; 
+                                input(type='radio' id="radioSelection" name="resselection" value=`${nameOfService}` onchange='displayResidentialServiceDetails();') 
+                #resServiceMsg

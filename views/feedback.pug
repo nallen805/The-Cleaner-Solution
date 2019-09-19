@@ -1,0 +1,14 @@
+//-Testimonials/Feedback
+
+extends layout
+block content
+    h4 Testimonials 
+    .container-fluid
+        each ts in test
+            .row 
+                | "#{ts.testimonial}"
+                br
+            .row.custName 
+                | -#{ts.custName}
+            br 
+            hr  

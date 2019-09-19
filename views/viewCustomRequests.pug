@@ -1,0 +1,12 @@
+//- Display all custom requests
+
+extends layout 
+block content
+    each cr in custReq
+        |#{cr.name}
+        br
+        |#{cr.email}
+        br 
+        |#{cr.phone}
+        hr
+    a(href='/adminSuccess') Back 

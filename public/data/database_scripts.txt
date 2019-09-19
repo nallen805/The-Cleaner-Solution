@@ -1,0 +1,66 @@
+MongoDB scripts for The Cleaner Solution
+
+db.officeService.insert
+(
+    [
+        {service:"Window cleaning", area:"Office"}, 
+        {service:"Office cleaning", area:"Office"},
+        {service:"Sweeping & mopping cleaning", area:"Office"},
+        {service:"Vacuum & shampoo", area:"Office"}, 
+        {service:"Restroom cleaning", area:"Office"},
+        {service:"Smoke area & break room cleaning", area:"Office"},
+        {service:"Basement & events room cleanup", area:"Office"}
+    ]
+)
+
+//Revised: add all services to same collection, filter what's necessary
+db.services.insert
+(
+    [
+        {serviceName:"Window cleaning", serviceArea:"Office"}, 
+        {serviceName:"Office cleaning", serviceArea:"Office"},
+        {serviceName:"Sweeping & mopping cleaning", serviceArea:"Office"},
+        {serviceName:"Vacuum & shampoo", serviceArea:"Office"}, 
+        {serviceName:"Restroom cleaning", serviceArea:"Office"},
+        {serviceName:"Smoke area & break room cleaning", serviceArea:"Office"},
+        {serviceName:"Basement & events room cleanup", serviceArea:"Office"}, 
+        {serviceName:"Carpet & Rug cleaning & shampooing", serviceArea:"Residence"},
+        {serviceName:"Room cleaning", serviceArea:"Residence"},
+        {serviceName:"Residence cleaning", serviceArea:"Residence"},
+        {serviceName:"Power washing(outside)", serviceArea:"Residence"}
+    ]
+)
+
+//Come back to that plan -- not sure about that one
+db.residentialService.insert
+(
+    [
+        {service:"Carpet & Rug cleaning & shampooing", area:"Residence"},
+        {service:"Room cleaning", area:"Residence"},
+        {service:"Residence cleaning", area:"Residence"},
+        {service:"Power washing(outside)", area:"Residence"}  
+    ]
+)
+
+//List of Standard Packages
+db.standardPackages.insert
+(
+    [
+        {packageNo:'B1001', packageSel: ['Office window cleaning', 'Office sweep & mop', 'Office vacuum & shampoo', Office restroom cleaning', 'Office smoke & break room cleaning', 'Office basement & events room cleanup'], freq:'one-time', price:100},
+        {packageNo:'B1002', packageSel: ['Office window cleaning', 'Office sweep & mop', 'Office vacuum & shampoo', Office restroom cleaning', 'Office smoke & break room cleaning', 'Office basement & events room cleanup'], freq:'weekly', price:150},
+        {packageNo:'B1003', packageSel: ['Office window cleaning', 'Office sweep & mop', 'Office vacuum & shampoo', Office restroom cleaning', 'Office smoke & break room cleaning', 'Office basement & events room cleanup'], freq:'bi-weekly', price:200},
+        {packageNo:'B1004', packageSel: ['Office window cleaning', 'Office sweep & mop', 'Office vacuum & shampoo', Office restroom cleaning', 'Office smoke & break room cleaning', 'Office basement & events room cleanup'], freq:'one-time', price:250}
+    ]
+)
+
+//Tesimonials Database
+db.testimonials.insert
+(
+    [
+        {custName:'Angela J.', testimonial:'I have been using this cleaning service for two years now and I love them!!! The service is always done efficiently and expediently!! I highly recommend!'},
+        {custName:'Sean S.', testimonial:'This is a great cleaning service!! They really go above and beyond to get my office clean!!'},
+        {custName:'Ridwaana S.', testimonial:'I just tried this cleaning service for the first time and I am truly amazed!! I will be continuing to use their services.'},
+        {custName:'Jon B.', testimonial:'Thank you Cleaner Solution!! You definitely are the solution I\'ve been looking for!!'},
+        {custName:'Christian G.', testimonial:'As a businessman, I really just want to focus on my business. The Cleaner Solution has helped me by allowing me to have one less concern by consistently keeping my office buildings clean. I recommend them absolutely!!'}
+    ]
+)

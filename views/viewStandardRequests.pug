@@ -1,0 +1,19 @@
+//- View all standard requests
+
+extends layout 
+block content
+    h4 Standard Requests
+    each sr in stdReq
+        |Name: #{sr.name}
+        br
+        |Email: #{sr.email}
+        br
+        |Phone: #{sr.stdPhone}
+        br
+        |Selected Package: #{sr.stdSelectedPkg}
+        br
+        |Selected Frequency: #{sr.stdSelectedFreq}
+        br
+        |Selected Price: #{sr.stdSelectedPrice}
+        hr
+    a(href='/adminSuccess') Back 

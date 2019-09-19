@@ -1,0 +1,26 @@
+//- Residential Services.pug
+
+doctype html 
+html  
+    .row
+        .col
+            h4.display-4 Residential Cleaning
+            p.
+                We don't just clean office buildings. We can come clean your residence as well!! We can do one time clean
+                ups, or we can come up with a semi-permanent, or permanent cleaning plan. We are your Cleaner Solution! Come
+                to us for your cleaning!!
+            button.btn#cleanResidence(onClick='cleanResidence()')|Clean my Residence 
+    .row
+        .col
+            #showResidentialServices
+                h3 Residential Services
+                table.table-responsive.table-striped
+                    thead
+                        tr
+                            th Services Offered
+                            th Area(s) Treated
+                    tbody
+                    each service in serv
+                        tr
+                            td #{service.service}
+                            td #{service.area}
