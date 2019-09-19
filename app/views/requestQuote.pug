@@ -1,0 +1,69 @@
+//- Request quote -- user can choose from a list of packages or create a custom package
+
+extends layout
+block append head
+    script(src='/javascripts/jsFunctions.js')
+block content
+    h3.text-center Choose from a list of our standard packages
+    .container
+        form(action='/savedStandardRequest', method='post')
+            .row
+                each serv in stdService
+                    .col-3#RBStyle
+                        .row
+                            .col.header
+                                |Package Number: 
+                            .col
+                                |#{serv.packageNo}
+                        .row
+                            .col
+                                |Package Selection: 
+                            .col
+                                |#{serv.packageSel}
+                        .row#pkgFreq
+                            .col
+                                |Frequency:
+                            .col
+                                |#{serv.freq}
+                        .row#pkgPrice
+                            .col
+                                |Price: 
+                            .col
+                                |$#{serv.price}
+                        .row
+                            - var packNo = `${serv.packageNo}`; 
+                            - var packFreq = `${serv.freq}`;
+                            - var price = `${serv.price}`;
+                        .row.text-center
+                            input(type='radio' name="radioGroup" value=`${packNo}, ${packFreq}, ${price}`  onchange='checkInfo();')
+            br
+            .row
+                .col#selectedPackage 
+                .col#selectedFreq 
+                .col#price 
+            .row
+                button(type='button' value='Select Package' onclick='submittedStandard()').btns.btn.form-control Select Package 
+    hr
+    h3.text-center Or simply fill out the form below and someone will contact you to set up a custom package deal!
+    .container
+        .row
+            .col    
+                form(action='/savedCustomRequest' method='post').form-group.formStyle
+                    .row
+                        label Enter your name:
+                        br 
+                        input(type='text' name='name' required).form-control
+                        br
+                    .row
+                        label Enter your email address:
+                        br 
+                        input(type='email' name='email' required).form-control
+                    .row
+                        label Enter your phone number:
+                        br 
+                        input(type='phone' name='phone').form-control
+                        br
+                    .row
+                        input(type='submit').btn.form-control
+            .col
+                img(src='./images/form.png')#formPic.img-fluid

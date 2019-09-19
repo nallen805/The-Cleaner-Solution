@@ -1,0 +1,20 @@
+//- Login.pug
+
+extends layout
+block content
+    h4 #{message}
+    .container
+        form(action='loginSuccess' method='post').form-group
+            .row
+                .col
+                    Label Username:
+                    br
+                    input(type='text' name='username' required).form-control
+            .row
+                .col
+                    Label Password:
+                    br 
+                    input(type='password' name='password' required).form-control
+            .row
+                .col
+                    input(type='submit' value='Submit').btn.form-control 

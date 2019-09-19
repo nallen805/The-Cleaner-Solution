@@ -1,0 +1,6 @@
+MongoDB scripts for The Cleaner Solution
+
+db.officeService.insertMany(
+    [
+     {}   
+    ])
