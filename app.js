@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var favicon = require('serve-favicon');	
+var favicon = require('serve-favicon');	
 var stylus = require('stylus');
 var helmet = require('helmet');
 
@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));    //Serve static files
 
 //Favicon
-//app.use(favicon(path.join(__dirname, 'public', 'cleanBucket.png')));
+app.use(favicon(path.join(__dirname, 'public', 'cleanBucket.png')));
 
 //Middleware
 app.use(stylus.middleware(
