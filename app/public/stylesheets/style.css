@@ -13,6 +13,20 @@ li.nav-item.nav-link.active:hover {
   color: #f5f5f5;
 }
 /** End of Header page */
+.menuItem:hover {
+  font-style: italic;
+  font-size: larger;
+}
+.header {
+  font: bolder;
+}
+.formStyle {
+  width: 50%;
+}
+#formPic {
+  height: 75%;
+  width: 75%;
+}
 #message {
   background-color: #008000;
   color: #f5f5f5;
