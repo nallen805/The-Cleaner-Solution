@@ -107,20 +107,16 @@ function checkInfo()
 {
     var thisRadBtnVal;
     var radBtns = document.getElementsByName("radioGroup");
-    
     var addPkgNo = document.getElementById("selectedPackage");
     var addPkgFreq = document.getElementById("selectedFreq");
     var showPkgPrice = document.getElementById("price");
-
     var packFreq;
     var price;
     var packNo;
 
     for(let i=0; i<radBtns.length; i++)
     {
-
         thisRadBtnVal = radBtns[i].value.split(",");
-        
         packNo = thisRadBtnVal[0];
         packFreq = thisRadBtnVal[1];
         price = thisRadBtnVal[2];
@@ -139,34 +135,17 @@ function checkInfo()
 function submittedStandard()
 {
     var radioBtns = document.getElementsByName('radioGroup');
-    // for(let i=0; i<radioBtns.length; i++)
-    // {
-    //     if(!radioBtns[i].checked)
-    //     {
-    //         alert('Please make a selection.');
-    //     }
-    // }
-
-    if(!radioBtns.checked)
+    if(confirm("Are you sure?"))
     {
-        alert('Please make a selection');
-    }
-    else 
-    {
-        if(confirm("Are you sure?"))
-        {
-            var selPkg = document.getElementById('selectedPackage');
-            var selFreq = document.getElementById('selectedFreq');
-            var selPrice = document.getElementById('price');
-    
-            localStorage.selectedPkg=selPkg.innerHTML;
-            localStorage.selectedFreq=selFreq.innerHTML;
-            localStorage.selectedPrice=selPrice.innerHTML;
-            window.location.assign('/savedStandardReq');
-        }
-        else
-        {   window.location.assign('/quote');   }
-    }
+        var selPkg = document.getElementById('selectedPackage');
+        var selFreq = document.getElementById('selectedFreq');
+        var selPrice = document.getElementById('price');
 
-
+        localStorage.selectedPkg=selPkg.innerHTML;
+        localStorage.selectedFreq=selFreq.innerHTML;
+        localStorage.selectedPrice=selPrice.innerHTML;
+        window.location.assign('/savedStandardReq');
+    }
+    else
+    {   window.location.assign('/quote');   }
 }

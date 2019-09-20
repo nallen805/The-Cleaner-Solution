@@ -2,11 +2,14 @@
 
 extends layout 
 block content
-    each cr in custReq
-        |#{cr.name}
-        br
-        |#{cr.email}
-        br 
-        |#{cr.phone}
-        hr
-    a(href='/adminSuccess') Back 
+    .container
+        h4.text-center Custom Requests
+        each cr in custReq
+            |Name: #{cr.name}
+            br
+            |Email: #{cr.email}
+            br 
+            |Phone: #{cr.phone}
+            hr
+        .text-right
+            a(href='/adminSuccess') Back 

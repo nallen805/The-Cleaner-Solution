@@ -2,7 +2,7 @@
 
 extends layout
 block content
-    h4 Registered Users
+    h4.text-center Registered Users
     .container
         each ru in regUsr
             .row
@@ -14,4 +14,5 @@ block content
                 .col #{ru.password}
                 .col #{ru.selection}
             hr 
-    a(href='/adminSuccess') Back 
+        .text-right
+            a(href='/adminSuccess') Back 
