@@ -152,3 +152,21 @@ exports.verifyUser=function(username, password, response)
         {   response.render('loginSuccess', {title:'Login Success', message:'Welcome'});  }
     });
 }
+
+//Leave feedback -- save messages
+exports.saveFeedback=function(custName, testimonial, response)
+{
+    db.testimonials.save({"custName":custName, "testimonial":testimonial}, function(error, saved)
+    {
+        if(error || !saved)
+        {
+            console.log('Error saving');
+            response.render('error', {title:'Error', message:'Error'});
+        }
+        else
+        {
+            console.log('Saving Testimonial');
+            response.render('savingFeedback', {title:'Saved Feedback', message:'Saved Feedback'});
+        }
+    });
+}

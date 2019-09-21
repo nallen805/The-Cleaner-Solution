@@ -155,4 +155,19 @@ router.get('/Gallery', function(request, response)
     response.render('gallery', {title:'Gallery', message:'Gallery'});
 });
 
+//Leave feedback
+router.get('/leaveFeedback', function(request, response)
+{
+    console.log('Request to leave feedback received');
+    response.render('leaveFeedback', {title:'Leave Feedback', message:'Leave Feedback'});
+});
+
+router.post('/savingFeedback', function(request, response)
+{
+    //console.log('Saving feedback/testimonial');
+    var custName=request.body.custName;
+    var testimonial=request.body.testimonial;
+    dbmodule.saveFeedback(custName, testimonial, response);
+});
+
 module.exports = router;

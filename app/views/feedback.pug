@@ -6,9 +6,9 @@ block content
     .container
         each ts in test
             .row 
-                | "#{ts.testimonial}"
+                .col "#{ts.testimonial}"
                 br
-            .row.custName 
-                | -#{ts.custName}
+            .row.text-right.custName 
+                .col -#{ts.custName}
             br 
             hr  
