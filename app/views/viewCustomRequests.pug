@@ -4,12 +4,15 @@ extends layout
 block content
     .container
         h4.text-center Custom Requests
-        each cr in custReq
-            |Name: #{cr.name}
-            br
-            |Email: #{cr.email}
-            br 
-            |Phone: #{cr.phone}
-            hr
+        table.table.table-striped.table-boredered
+            tr
+                th Name
+                th Email
+                th Phone
+            each cr in custReq
+                tr 
+                    td #{cr.name}
+                    td #{cr.email}
+                    td #{cr.phone}
         .text-right
             a(href='/adminSuccess') Back 

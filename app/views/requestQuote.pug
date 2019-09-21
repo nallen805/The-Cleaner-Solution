@@ -2,7 +2,8 @@
 
 extends layout
 block append head
-    script(src='/javascripts/jsFunctions.js')
+    script(src='./javascripts/jquery-3.3.1.js')
+    script(src='./javascripts/jsFunctions.js')
 block content
     h3.text-center Choose from a list of our standard packages
     .container
@@ -19,7 +20,14 @@ block content
                             .col
                                 |Package Selection: 
                             .col
-                                |#{serv.packageSel}
+                                select.form-control
+                                    option Select 
+                                    option #{serv.packageSel[0]}
+                                    option #{serv.packageSel[1]}
+                                    option #{serv.packageSel[2]}
+                                    option #{serv.packageSel[3]}
+                                    option #{serv.packageSel[4]}
+                                    option #{serv.packageSel[5]}
                         .row#pkgFreq
                             .col
                                 |Frequency:
@@ -65,5 +73,3 @@ block content
                         br
                     .row
                         input(type='submit').btn.form-control
-            //-.col
-                img(src='./images/form.png')#formPic.img-fluid

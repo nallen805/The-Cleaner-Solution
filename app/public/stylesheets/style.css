@@ -26,8 +26,8 @@ li.nav-item.nav-link.active:hover {
 }
 /* End of Admin Login */
 .officeSpace {
-  height: 50%;
-  width: 50%;
+  height: 75%;
+  width: 75%;
 }
 #message {
   background-color: #008000;
