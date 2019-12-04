@@ -7,7 +7,7 @@ block append head
 block content
     h3.text-center Choose from a list of our standard packages
     .container
-        form(action='/savedStandardRequest', method='post')
+        form(action='/savingStandardRequest', name='standardForm', method='post')
             .row
                 each serv in stdService
                     .col-3#RBStyle
@@ -22,12 +22,12 @@ block content
                             .col
                                 select.form-control
                                     option Select 
-                                    option #{serv.packageSel[0]}
-                                    option #{serv.packageSel[1]}
-                                    option #{serv.packageSel[2]}
-                                    option #{serv.packageSel[3]}
-                                    option #{serv.packageSel[4]}
-                                    option #{serv.packageSel[5]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[0]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[1]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[2]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[3]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[4]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[5]}
                         .row#pkgFreq
                             .col
                                 |Frequency:
@@ -45,12 +45,29 @@ block content
                         .row.text-center
                             input(type='radio' name="radioGroup" value=`${packNo}, ${packFreq}, ${price}`  onchange='checkInfo();')
             br
-            .row
-                .col#selectedPackage 
-                .col#selectedFreq 
-                .col#price 
-            .row
-                button(type='button' value='Select Package' onclick='submittedStandard()').btns.btn.form-control Select Package 
+            #hidden
+                .row
+                    .col
+                        label(for="stdName") Name:
+                        input(type='text' name='stdName').form-control    
+                    .col
+                        label(for="stdEmail") Email:
+                        input(type='email' name='stdEmail').form-control
+                    .col
+                        label(for="stdPhone") Phone:
+                        input(type='text' name='stdPhone').form-control
+                .row
+                    .col
+                        label(for='stdSelectedPkg') Selected Package:
+                        input(type='text' name='stdSelectedPkg')#selectedPkg.form-control
+                    .col
+                        label(for='stdSelectedFreq') Frequency:
+                        input(type='text' name='stdSelectedFreq')#selectedFreq.form-control
+                    .col
+                        label(for='stdSelectedPrice') Price:
+                        input(type='text' name='stdSelectedPrice')#selectedPrice.form-control
+                .row
+                    button(type='button' onclick='submittedStandard()').btns.btn.form-control Submit Standard Request
     hr
     h3.text-center Or simply fill out the form below and someone will contact you to set up a custom package deal!
     .container
@@ -72,4 +89,4 @@ block content
                         input(type='phone' name='phone').form-control
                         br
                     .row
-                        input(type='submit').btn.form-control
+                        input(type='submit' value='Submit Custom Request').btn.form-control

@@ -4,6 +4,7 @@ window.onload=function()
     $('#showResidentialServices').hide();
     $('#serviceMsg').hide();
     $('#resServiceMsg').hide();
+    $('#hidden').hide();
 }
 
 function cleanOffice()
@@ -107,9 +108,9 @@ function checkInfo()
 {
     var thisRadBtnVal;
     var radBtns = document.getElementsByName("radioGroup");
-    var addPkgNo = document.getElementById("selectedPackage");
+    var addPkgNo = document.getElementById("selectedPkg");
     var addPkgFreq = document.getElementById("selectedFreq");
-    var showPkgPrice = document.getElementById("price");
+    var showPkgPrice = document.getElementById("selectedPrice");
     var packFreq;
     var price;
     var packNo;
@@ -123,10 +124,12 @@ function checkInfo()
 
         if(radBtns[i].checked)
         {
-            addPkgNo.scrollIntoView();
-            addPkgNo.innerHTML="Selected package: "+packNo;
-            addPkgFreq.innerHTML="Frequency: "+packFreq;
-            showPkgPrice.innerHTML="Price: $"+price;
+
+            $('#hidden').show();
+            document.getElementById('hidden').scrollIntoView();
+            addPkgNo.value=packNo;
+            addPkgFreq.value=packFreq;
+            showPkgPrice.value=price;
         }
     }
 }
@@ -137,14 +140,16 @@ function submittedStandard()
     var radioBtns = document.getElementsByName('radioGroup');
     if(confirm("Are you sure?"))
     {
-        var selPkg = document.getElementById('selectedPackage');
-        var selFreq = document.getElementById('selectedFreq');
-        var selPrice = document.getElementById('price');
+        // var selPkg = document.getElementById('selectedPackage');
+        // var selFreq = document.getElementById('selectedFreq');
+        // var selPrice = document.getElementById('price');
 
-        localStorage.selectedPkg=selPkg.innerHTML;
-        localStorage.selectedFreq=selFreq.innerHTML;
-        localStorage.selectedPrice=selPrice.innerHTML;
-        window.location.assign('/savedStandardReq');
+        // localStorage.selectedPkg=selPkg.innerHTML;
+        // localStorage.selectedFreq=selFreq.innerHTML;
+        // localStorage.selectedPrice=selPrice.innerHTML;
+
+        document.forms.namedItem("standardForm").submit();
+        //window.location.assign('/savedStandardReq');
     }
     else
     {   window.location.assign('/quote');   }

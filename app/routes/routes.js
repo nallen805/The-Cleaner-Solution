@@ -37,9 +37,9 @@ router.post('/savingStandardRequest', function(request, response)
     var stdName = request.body.stdName;
     var stdEmail = request.body.stdEmail;
     var stdPhone = request.body.stdPhone;
-    var stdSelectedPkg = request.body.pkg;
-    var stdSelectedFreq = request.body.freq;
-    var stdSelectedPrice = request.body.price;
+    var stdSelectedPkg = request.body.stdSelectedPkg;
+    var stdSelectedFreq = request.body.stdSelectedFreq;
+    var stdSelectedPrice = request.body.stdSelectedPrice;
     dbmodule.saveStdRequest(stdName, stdEmail, stdPhone, stdSelectedPkg, stdSelectedFreq, stdSelectedPrice, response);
 });
 
