@@ -137,20 +137,14 @@ function checkInfo()
 //Confirm package has been selected
 function submittedStandard()
 {
-    var radioBtns = document.getElementsByName('radioGroup');
     if(confirm("Are you sure?"))
-    {
-        // var selPkg = document.getElementById('selectedPackage');
-        // var selFreq = document.getElementById('selectedFreq');
-        // var selPrice = document.getElementById('price');
-
-        // localStorage.selectedPkg=selPkg.innerHTML;
-        // localStorage.selectedFreq=selFreq.innerHTML;
-        // localStorage.selectedPrice=selPrice.innerHTML;
-
-        document.forms.namedItem("standardForm").submit();
-        //window.location.assign('/savedStandardReq');
-    }
+    {   document.forms.namedItem("standardForm").submit();  }
     else
     {   window.location.assign('/quote');   }
 }
+
+// function validatePhone(regPhone)
+// {
+//     var regPhone=document.getElementById('regPhone').text;
+//     console.log(regPhone);
+// }
