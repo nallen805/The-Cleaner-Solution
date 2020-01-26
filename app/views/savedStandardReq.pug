@@ -1,0 +1,37 @@
+//- Saved standard request -- fix it -- the Pkg name, pkg freq, and pkg price are not being added to database....
+extends layout
+block append header
+    script(src='../javascripts/jsFunctions.js')
+block content
+    h4 Success! 
+    .container
+        form(action='/savingStandardRequest' method='post').form-group
+            .row
+                label Name:
+                br 
+                input(type='text' name='stdName' required).form-control
+                br
+            .row 
+                label Email:
+                br 
+                input(type='email' name='stdEmail' required).form-control    
+            .row
+                label Phone Number:
+                br 
+                input(type='text' name='stdPhone' required).form-control
+            .row                
+                .col#pkg(name='pkg')
+                    |Selected Package: #{pkg}  
+                .col#freq(name='freq')    
+                    |Selected Frequency: #{freq}
+                .col#price(name='price')
+                    |Price: #{price}
+                script 
+                    |var pkg=localStorage.selectedPkg;
+                    |var freq = localStorage.selectedFreq;
+                    |var price = localStorage.selectedPrice;
+                    |document.getElementById('pkg').innerHTML=pkg;
+                    |document.getElementById('freq').innerHTML=freq; 
+                    |document.getElementById('price').innerHTML=price;
+            .row
+                input(type='submit' value="Submit").btn.form-control               

@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    block head
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='/stylesheets/css/bootstrap.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Vibes&display=swap')
+  block header
+    include ./includes/header.pug
+  body.container-fluid
+    block content
+  block footer  
+    include ./includes/footer.pug

@@ -1,0 +1,92 @@
+//- Request quote -- user can choose from a list of packages or create a custom package
+
+extends layout
+block append head
+    script(src='./javascripts/jquery-3.3.1.js')
+    script(src='./javascripts/jsFunctions.js')
+block content
+    h3.text-center Choose from a list of our standard packages
+    .container
+        form(action='/savingStandardRequest', name='standardForm', method='post')
+            .row
+                each serv in stdService
+                    .col-3#RBStyle
+                        .row
+                            .col.header
+                                |Package Number: 
+                            .col
+                                |#{serv.packageNo}
+                        .row
+                            .col
+                                |Package Selection: 
+                            .col
+                                select.form-control
+                                    option Select 
+                                    option(name='stdSelectedPkg') #{serv.packageSel[0]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[1]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[2]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[3]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[4]}
+                                    option(name='stdSelectedPkg') #{serv.packageSel[5]}
+                        .row#pkgFreq
+                            .col
+                                |Frequency:
+                            .col
+                                |#{serv.freq}
+                        .row#pkgPrice
+                            .col
+                                |Price: 
+                            .col
+                                |$#{serv.price}
+                        .row
+                            - var packNo = `${serv.packageNo}`; 
+                            - var packFreq = `${serv.freq}`;
+                            - var price = `${serv.price}`;
+                        .row.text-center
+                            input(type='radio' name="radioGroup" value=`${packNo}, ${packFreq}, ${price}`  onchange='checkInfo();')
+            br
+            #hidden
+                .row
+                    .col
+                        label(for="stdName") Name:
+                        input(type='text' name='stdName').form-control    
+                    .col
+                        label(for="stdEmail") Email:
+                        input(type='email' name='stdEmail').form-control
+                    .col
+                        label(for="stdPhone") Phone:
+                        input(type='text' name='stdPhone').form-control
+                .row
+                    .col
+                        label(for='stdSelectedPkg') Selected Package:
+                        input(type='text' name='stdSelectedPkg')#selectedPkg.form-control
+                    .col
+                        label(for='stdSelectedFreq') Frequency:
+                        input(type='text' name='stdSelectedFreq')#selectedFreq.form-control
+                    .col
+                        label(for='stdSelectedPrice') Price:
+                        input(type='text' name='stdSelectedPrice')#selectedPrice.form-control
+                .row
+                    button(type='button' onclick='submittedStandard()').btns.btn.form-control Submit Standard Request
+    hr
+    h3.text-center Or simply fill out the form below and someone will contact you to set up a custom package deal!
+    .container
+        .row
+            .col    
+                form(action='/savedCustomRequest' method='post').form-group.formStyle
+                    .row
+                        label Enter your name:
+                        br 
+                        input(type='text' name='name' required).form-control
+                        br
+                    .row
+                        label Enter your email address:
+                        br 
+                        input(type='email' name='email' required).form-control
+                    .row
+                        label Enter your phone number:
+                        br 
+                        input(type='phone' name='phone').form-control
+                        br
+                    .row
+                        input(type='submit' value='Submit Custom Request').btn.form-control

@@ -1,0 +1,37 @@
+//- View all standard requests
+
+extends layout 
+block content
+    .container
+        h4.text-center Standard Requests
+        table.table.table-striped.table-bordered
+            tr
+                th Name
+                th Email
+                th Phone
+                th Selected Package
+                th Selected Frequency
+                th Selected Price
+            each sr in stdReq
+                tr
+                    td #{sr.name}
+                    td #{sr.email}
+                    td #{sr.stdPhone}
+                    td #{sr.stdSelectedPkg}
+                    td #{sr.stdSelectedFreq}
+                    td #{sr.stdSelectedPrice}
+        //- each sr in stdReq
+        //-     |Name: #{sr.name}
+        //-     br
+        //-     |Email: #{sr.email}
+        //-     br
+        //-     |Phone: #{sr.stdPhone}
+        //-     br
+        //-     |Selected Package: #{sr.stdSelectedPkg}
+        //-     br
+        //-     |Selected Frequency: #{sr.stdSelectedFreq}
+        //-     br
+        //-     |Selected Price: #{sr.stdSelectedPrice}
+        //-     hr
+        .text-right
+            a(href='/adminSuccess') Back 

@@ -1,0 +1,15 @@
+//- Login Success 
+
+extends layout
+block content
+    h4 Login successful
+    .container
+        .row
+            .col-10
+                //- Request new services
+            .col-2
+                a(href='/viewPastServices').menuItem View Past Services
+                hr
+                a(href='/viewUpcomingServices').menuItem View Upcoming Services
+                hr
+                a(href='/leaveFeedback').menuItem Leave Feedback

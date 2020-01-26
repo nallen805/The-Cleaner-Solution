@@ -1,0 +1,56 @@
+//-Registration for business or residential customers
+
+extends layout
+block append header
+    script(src='../javascripts/jsFunctions.js')
+block content
+    h4.text-center Register Here:
+    .container 
+        form(action='/savingRegisteredUsers' method='post').form-group
+            .row
+                .col 
+                    label First name: 
+                    br
+                    input(type='text' name='regFName' required).form-control
+                    br
+                .col
+                    label Last name: 
+                    br 
+                    input(type='text' name='regLName' required).form-control
+            .row
+                .col 
+                    label Email: 
+                    br 
+                    input(type='email' name='regEmail' required).form-control
+                    br
+            .row
+                .col  
+                    label Phone:
+                    br 
+                    input(type='phone' name='regPhone' required).form-control
+                    br 
+            .row
+                .col 
+                    label Create Username: 
+                    br 
+                    input(type='text' name='regUsername' required).form-control
+                    br
+                .col
+                    label Create Password:
+                    br 
+                    input(type='password' name='password' required).form-control
+                    br 
+            .row
+                .col 
+                    label Choose your type of registration:
+            .row     
+                .col  
+                    input(type='radio' name='chooseRegistration' id='radioBtnBus' value='Business') 
+                    label(for='radioBtnBus' name='Business')|Business  
+                .col 
+                    input(type='radio' name='chooseRegistration' id='radioBtnRes' value='Residence')
+                    label(for='radioBtnRes' name='Residence')|Residence                       
+            .row
+                .col 
+                    input(type='submit' value='Complete Registration').btn.form-control
+        

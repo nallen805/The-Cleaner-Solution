@@ -1,0 +1,20 @@
+//- Leave feedback/testimonial
+
+extends layout
+block content
+    .container
+        h4.text-center Leave Feedback Here
+        br
+        form(action='/savingFeedback', method='post').form-group
+            .row
+                .col 
+                    label Name: 
+                    input(type='text' name='custName' required).form-control
+            .row
+                .col    
+                    label Feedback:
+                    br
+                    textarea(cols='20' rows='4' name='testimonial' required).form-control
+            .row
+                .col
+                    input(type='submit' value='Send Feedback').form-control

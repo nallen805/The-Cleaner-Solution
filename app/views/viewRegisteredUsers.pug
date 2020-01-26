@@ -1,0 +1,26 @@
+//- Display all registered users 
+
+extends layout
+block content
+    h4.text-center Registered Users
+    .container
+        table.table.table-striped.table-bordered
+            tr
+                th First Name
+                th Last Name
+                th Email
+                th Phone
+                th Username
+                th Password
+                th Selection
+            each ru in regUsr
+                tr
+                    td #{ru.firstname}
+                    td #{ru.lastname}
+                    td #{ru.email}
+                    td #{ru.phone}
+                    td #{ru.username}
+                    td #{ru.password}
+                    td #{ru.selection}
+        .text-right
+            a(href='/adminSuccess') Back 
