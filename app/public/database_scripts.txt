@@ -4,3 +4,103 @@ db.officeService.insertMany(
     [
      {}   
     ])
+
+db.standardPackages.insertMany
+([
+{
+        "packageNo" : "B1001",
+        "packageSel" : [
+                "Office Window Cleaning",
+                "Office sweep & mop",
+                "Office vacuum & shampoo",
+                "Office restroom cleaning",
+                "Office smoke area & break room cleaning",
+                "Office basement & events room cleanup"
+        ],
+        "freq" : "one-time",
+        "price" : 100
+}
+{
+        "packageNo" : "B1002",
+        "packageSel" : [
+                "Office Window Cleaning",
+                "Office sweep & mop",
+                "Office vacuum & shampoo",
+                "Office restroom cleaning",
+                "Office smoke area & break room cleaning",
+                "Office basement & events room cleanup"
+        ],
+        "freq" : "weekly",
+        "price" : 150
+}
+{
+        "packageNo" : "B1003",
+        "packageSel" : [
+                "Office Window Cleaning",
+                "Office sweep & mop",
+                "Office vacuum & shampoo",
+                "Office restroom cleaning",
+                "Office smoke area & break room cleaning",
+                "Office basement & events room cleanup"
+        ],
+        "freq" : "bi-weekly",
+        "price" : 200
+}
+{
+        "packageNo" : "B1004",
+        "packageSel" : [
+                "Office Window Cleaning",
+                "Office sweep & mop",
+                "Office vacuum & shampoo",
+                "Office restroom cleaning",
+                "Office smoke area & break room cleaning",
+                "Office basement & events room cleanup"
+        ],
+        "freq" : "monthly",
+        "price" : 250
+}
+{
+        "packageNo" : "R1001",
+        "packageSel" : [
+                "Residential carpet or rug cleaning and shampooing",
+                "Room cleaning",
+                "Residence cleaning",
+                "Power washing(outside)"
+        ],
+        "freq" : "one-time",
+        "price" : 75
+}
+{
+        "packageNo" : "R1002",
+        "packageSel" : [
+                "Residential carpet or rug cleaning and shampooing",
+                "Room cleaning",
+                "Residence cleaning",
+                "Power washing(outside)"
+        ],
+        "freq" : "weekly",
+        "price" : 100
+}
+{
+        "packageNo" : "R1003",
+        "packageSel" : [
+                "Residential carpet or rug cleaning and shampooing",
+                "Room cleaning",
+                "Residence cleaning",
+                "Power washing(outside)"
+        ],
+        "freq" : "bi-weekly",
+        "price" : 150
+}
+{
+        "packageNo" : "R1004",
+        "packageSel" : [
+                "Residential carpet or rug cleaning and shampooing",
+                "Room cleaning",
+                "Residence cleaning",
+                "Power washing(outside)"
+        ],
+        "freq" : "monthly",
+        "price" : 200
+}
+])
