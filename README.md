@@ -16,6 +16,7 @@ To use this application, you must have Node and Express.js installed. This can b
 <strong>After your installation, please do the following:</strong>
 <ol>
   <li> Run the database scripts found in "public/data/" to add the necessary collections to mongo database </li>
+  <li> Run the following command: npm install (to install necessary node modules)
   <li> Run the application:
     <ul>
       <li> From the command line, navigate to where the application has been saved </li>
