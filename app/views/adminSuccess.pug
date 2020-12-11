@@ -4,13 +4,13 @@ extends layout
 block content
     .container
         .row
+            .col-2
+                a(href='/viewCustomRequests').backlink.menuItem View Custom Requests
+                hr
+                a(href='/viewStandardRequests').backlink.menuItem View Standard Requests
+                hr
+                a(href='/viewRegisteredUsers').backlink.menuItem View Registered Users 
             .col-10
                 img(src='./images/officeSpace.jpg').img-thumbnail.officeSpace
-            .col-2
-                a(href='/viewCustomRequests').menuItem View Custom Requests
-                hr
-                a(href='/viewStandardRequests').menuItem View Standard Requests
-                hr
-                a(href='/viewRegisteredUsers').menuItem View Registered Users 
         .text-right
-            a(href='/adminLogin') Back  
+            a(href='/adminLogin').backlink Logout  

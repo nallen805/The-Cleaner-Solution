@@ -2,9 +2,9 @@
 
 extends layout
 block content
-    h4 #{message}
+    h4.text-center #{message}
     .container
-        form(action='loginSuccess' method='post').form-group
+        form.formDesign(action='loginSuccess' method='post').form-group
             .row
                 .col
                     Label Username:
@@ -18,3 +18,7 @@ block content
             .row
                 .col
                     input(type='submit' value='Submit').btn.form-control 
+        br
+        .row
+            .col.text-right
+                a(href='/').backlink Back

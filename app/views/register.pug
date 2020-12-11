@@ -6,7 +6,7 @@ block append header
 block content
     h4.text-center Register Here:
     .container 
-        form(action='/savingRegisteredUsers' method='post').form-group
+        form#designReg(action='/savingRegisteredUsers' method='post').form-group
             .row
                 .col 
                     label First name: 
@@ -27,7 +27,7 @@ block content
                 .col  
                     label Phone:
                     br 
-                    input(type='phone' name='regPhone' required).form-control
+                    input(type='phone' name='regPhone' style='width: 48%' required).form-control
                     br 
             .row
                 .col 
@@ -46,11 +46,14 @@ block content
             .row     
                 .col  
                     input(type='radio' name='chooseRegistration' id='radioBtnBus' value='Business') 
-                    label(for='radioBtnBus' name='Business')|Business  
+                    label(for='radioBtnBus' name='Business')|&nbsp; Business  
                 .col 
                     input(type='radio' name='chooseRegistration' id='radioBtnRes' value='Residence')
-                    label(for='radioBtnRes' name='Residence')|Residence                       
+                    label(for='radioBtnRes' name='Residence')|&nbsp; Residence                       
             .row
-                .col 
-                    input(type='submit' value='Complete Registration').btn.form-control
+                .col.text-center 
+                    input(type='submit' value='Complete Registration' style='width: 50%').btn.form-control
+        .row
+            .col.text-right
+                a(href='/').backlink Back
         

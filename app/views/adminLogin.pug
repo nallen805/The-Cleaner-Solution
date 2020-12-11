@@ -3,7 +3,7 @@
 extends layout
 block content
     .container
-        form.form-group(action='/adminSuccess' method='post')
+        form.formDesign.form-group(action='/adminSuccess' method='post')
             .row
                 label Admin Username:
                 br 
@@ -16,3 +16,7 @@ block content
                 br
             .row
                 input(type='Submit' value='Login').btn.form-control
+        br
+        .row
+            .col.text-right
+                a(href='/').backlink Back

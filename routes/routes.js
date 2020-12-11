@@ -148,6 +148,12 @@ router.post('/loginSuccess', function(request, response)
     dbmodule.verifyUser(username, password, response);
 });
 
+//GET to login page
+// router.get('/loginSuccess', function(request, response)
+// {
+//     response.render('login', title='Login Success', message='Welcome!');
+// });
+
 //Gallery page
 router.get('/Gallery', function(request, response)
 {

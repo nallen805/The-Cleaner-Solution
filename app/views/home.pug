@@ -3,21 +3,69 @@ block append header
     script(src='/javascripts/jquery-3.3.1.js')
     script(src='/javascripts/bootstrap.js')
 block content
+        #header
+            nav.nav-pills.nav-fill.rounded
+                ul.nav
+                    li.nav-item.nav-link.active
+                        a(href='/')
+                            |Home
+                    li.nav-item.nav-link
+                        a(href='/services')
+                            |Our Services
+                    li.nav-item.nav-link 
+                        a(href='/gallery')
+                            |Gallery
+                    li.nav-item.nav-link
+                        a(href='/quote')
+                            |Request a Quote
+                    li.nav-item.nav-link
+                        a(href='/feedback')
+                            |Feedback
         #contentMsg
-            h3.text-center Your only stop for the best cleaning services!! Check us out!!
+            h4.display-4.text-center Your only stop for the best cleaning services!! Check us out!!
         .row
-            .col-10
-                #carouselPicsContainer.carousel.slide.container(data-ride='carousel').img-thumbnail
+            .col
+                #carouselPicsContainer.carousel.slide.container(data-ride='carousel').img-fluid
                     .carousel-inner
                         .carousel-item.active
-                            img.d-block.w-100(src='/images/clean1.jpg')
+                            img.carouselPic(src='/images/clean1.jpg')
                         .carousel-item
-                            img.d-block.w-100(src='/images/clean2.jpg')
+                            img.carouselPic(src='/images/clean2.jpg')
                         .carousel-item
-                            img.d-block.w-100(src='/images/clean3.jpg')
-            .col-2
-                a(href='/register').menuItem Register Here
-                hr
-                a(href='/login').menuItem Login Here
-                hr
-                a(href='/adminLogin').menuItem Admin  
+                            img.carouselPic(src='/images/clean3.jpg')
+        .parallax
+            .row
+                .col.text-justify(style='background-color: white')
+                    h3.
+                        The Cleaner Solution provides all of your cleaning needs! We will come to you and clean your
+                        business or residence, leaving it with a fresh, sparkling shine! Take a look at our packages,
+                        or fill out a custom request package form and someone will follow up with you shortly. Thanks 
+                        for checking us out!       
+            .row.text-center
+                .col.text-center
+                    span.styleCirc
+                        h3
+                            a(href='/register').menuItem Register Here
+                    span.styleCirc
+                        h3
+                            a(href='/login').menuItem Login Here   
+                    span.styleCirc
+                        h3
+                            a(href='/adminLogin').menuItem Admin
+            .row
+                .col.text-center(style='background-color: white')
+                    h3.
+                        When you register for an account, you get to see your past cleanings, schedule upcoming 
+                        cleanings, make your payments online and more! Sign up for an account today!
+        .parallax
+            .row
+                .col
+                .col.text-center(style='color: white')
+                    h4.display-4 
+                        |SHARE YOUR FEEDBACK!
+                .col
+            .row
+                .col.text-center(style='background-color: white')
+                    h3.
+                        We ALWAYS appreciate customer feedback, so please let us know about your experience!
+        

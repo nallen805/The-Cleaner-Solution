@@ -1,24 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap')
 
-body.container-fluid 
+body.container-fluid
     font: 14px 'Righteous', cursive
+    color: green 
 
-a:select
-    color: purple  
+li.nav-item.nav-link
+    background-color: green
+    margin: 15px
+    border-radius: 20px
 
+li.nav-item.nav-link:hover
+    width: 15%
+    background-color: lightgreen 
 
 li.nav-item.nav-link.active
-    color: green 
-    background-color: whitesmoke 
+    color: green
+    background-color: lightgreen 
 
-li.nav-item.nav-link.active:hover
-    background-color: green  
-    color: whitesmoke  
+a
+    color: white
+
+a:visited 
+    color: white    
 
 /** End of Header page */
 
-.menuItem:hover
-    font-size: larger
+.backlink
+    color: green
+
+.backlink:visited
+    color: green     
 
 .header
     font: bolder
@@ -28,6 +39,22 @@ li.nav-item.nav-link.active:hover
     width: 75%
 
 /* End of Admin Login */
+
+#cleanOffice
+    margin-left: 25%
+    background-color: green 
+    color: white
+
+#cleanOffice:hover
+    background-color: lightgreen 
+
+#cleanResidence
+    margin-left: 25%
+    background-color: green 
+    color: white
+
+#cleanResidence:hover
+    background-color: lightgreen 
 
 .officeSpace
     height: 75%
@@ -51,16 +78,20 @@ p
     text-align: center
 
 #serviceMsg
-    border: 4px ridge green
-    color green 
+    //border: 4px ridge white
+    border-radius: 20px
+    background-color: green 
+    color white
     padding: 7px
-    text-align: justify
+    text-align: center
 
 #resServiceMsg
-    border: 4px ridge green
-    color green 
+    //border: 4px ridge white
+    border-radius: 20px
+    background-color: green
+    color white 
     padding: 7px
-    text-align: justify
+    text-align: center
 
 /** End of Services page */
 
@@ -69,19 +100,124 @@ p
 /** End of admin login page */
 
 #RBStyle  
-    border: 1px solid green 
+    border: 4px double green 
     border-radius: 5px
     padding: 3%
     
+#styleRadioBtns
+    margin-left: 50%
 
-.btns
-    background-color: green 
+.col-3.thinking:hover
+    background-color: lightgreen 
+
+button.btn
+    background-color: green
+    border-radius: 20px
+    color: white
+
+button.btn:hover
+    background-color: lightgreen
+
+input.btn
+    background-color: green
+    border-radius: 20px
+    color: white
+
+input.btn:hover
+    background-color: lightgreen 
+
+#hidden
+    width: 75%
+    margin-left: 15%
+    padding: 5%
+    border: double 6px green 
+    border-radius: 5px
+
+.formDesign
+    width: 50%
+    margin-left: 25%
+    padding: 5%
+    border: double 6px green 
+    border-radius: 5px
+
+.form-control:hover
+    border-color: green
+
+.requestForm
+    width: 100%
+    padding: 5%
+    border: double 6px green 
+    border-radius: 5px
+
+#designReg
+    border: double 6px green 
+    border-radius: 5px
+    padding: 5%
 
 .custName
     float: right 
 
 .justify
     text-align: justify
+
+.carouselPic
+    height: 500px
+    width: 1000px
+    border-radius: 5px
+
+.styleCirc
+    background-color: green
+    height: 250px
+    width: 250px
+    border-radius: 50%
+    display:inline-block
+    margin: 50px
+    padding-top: 100px
+    font-variant: annotation 
+
+.styleCirc:hover
+    border: 5px double white
+
+.parallax
+    background-image: url('../images/cleaning1.jpg')
+    height: 100%
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover 
+
+.parallax2
+    background-image: url('../images/cleaning7.jpg')
+    height: 100%
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover   
+
+.parallax3
+    background-image: url('../images/CleaningIcons2.jpg')
+    height: 100%
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover 
+
+.galleryPic
+    height: 450px
+    width: 450px
+    border-radius: 4px
+
+.feedback
+    border: 5px double green
+    border-radius: 4px
+    font-style: italic
+    padding: 5px
+
+.profile
+    border-radius: 50%
+    height: 100px
+    width: 100px
+
 
 #footer
     text-align: center
