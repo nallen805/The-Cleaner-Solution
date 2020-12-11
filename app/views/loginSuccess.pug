@@ -2,14 +2,18 @@
 
 extends layout
 block content
-    h4 Login successful
+    h4.text-center Welcome #{userName}!
     .container
         .row
-            .col-10
-                //- Request new services
             .col-2
-                a(href='/viewPastServices').menuItem View Past Services
+                //- Request new services
+                a(href='/Quote').backlink Request New Service(s)
                 hr
-                a(href='/viewUpcomingServices').menuItem View Upcoming Services
+                a(href='/viewPastServices').menuItem.backlink View Past Services
                 hr
-                a(href='/leaveFeedback').menuItem Leave Feedback
+                a(href='/viewUpcomingServices').menuItem.backlink View Upcoming Services
+                hr
+                a(href='/leaveFeedback').menuItem.backlink Leave Feedback
+        .row
+            .col.text-right
+                a(href='/').backlink Logout

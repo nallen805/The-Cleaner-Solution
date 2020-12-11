@@ -6,6 +6,24 @@ block append head
     script(src='/javascripts/bootstrap.js')
     script(src='/javascripts/jsFunctions.js')
 block content
+    #header
+        nav.nav-pills.nav-fill.rounded
+            ul.nav
+                li.nav-item.nav-link
+                    a(href='/')
+                        |Home
+                li.nav-item.nav-link.active
+                    a(href='/services')
+                        |Our Services
+                li.nav-item.nav-link
+                    a(href='/gallery')
+                        |Gallery
+                li.nav-item.nav-link
+                    a(href='/quote')
+                        |Request a Quote
+                li.nav-item.nav-link
+                    a(href='/feedback')
+                        |Feedback
     .container
         .row
             .col
@@ -34,7 +52,7 @@ block content
         .row
             .col
                 #showOfficeServices
-                    h3 Office Services 
+                    h3.text-center Office Services 
                     table.table-responsive.table-striped
                         thead
                             tr
@@ -45,16 +63,16 @@ block content
                         each service in serv 
                             tr#tableRows
                                 td#servName #{service.serviceName}
-                                td#servArea #{service.serviceArea}
+                                td#servArea(name="officeOnly") #{service.serviceArea}
                                 td 
                                     - var nameOfService = `${service.serviceName}`;
                                     - var serviceArea = `${service.serviceArea}`;
                                     input(type='radio' id="radioSelection" name="selection" value=`${nameOfService}` onchange='displayServiceDetails();') 
-
+                    br
                     #serviceMsg  
             .col
                 #showResidentialServices
-                    h3 Residential Services
+                    h3.text-center Residential Services
                     table.table-responsive.table-striped
                         thead
                             tr
@@ -70,4 +88,5 @@ block content
                                     - var nameOfService = `${service.serviceName}`;
                                     - var serviceArea = `${service.serviceArea}`; 
                                     input(type='radio' id="radioSelection" name="resselection" value=`${nameOfService}` onchange='displayResidentialServiceDetails();') 
+                    br
                     #resServiceMsg

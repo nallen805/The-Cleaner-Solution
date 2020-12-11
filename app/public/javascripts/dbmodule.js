@@ -149,7 +149,7 @@ exports.verifyUser=function(username, password, response)
         else if(users.length==0)
         {   response.render('login', {title:'Invalid User', message:'Not a valid user'});   }
         else
-        {   response.render('loginSuccess', {title:'Login Success', message:'Welcome'});  }
+        {   response.render('loginSuccess', {title:'Login Success', message:'Welcome', userName:username});  }
     });
 }
 

@@ -1,14 +1,36 @@
 //-Testimonials/Feedback
 
 extends layout
-block content
-    h4.text-center Testimonials 
+block content 
+    #header
+        nav.nav-pills.nav-fill.rounded
+            ul.nav
+                li.nav-item.nav-link
+                    a(href='/')
+                        |Home
+                li.nav-item.nav-link
+                    a(href='/services')
+                        |Our Services
+                li.nav-item.nav-link
+                    a(href='/gallery')
+                        |Gallery
+                li.nav-item.nav-link
+                    a(href='/quote')
+                        |Request a Quote
+                li.nav-item.nav-link.active
+                    a(href='/feedback')
+                        |Feedback
+    h4.text-center See what our customers are saying!
     .container
         each ts in test
-            .row 
-                .col "#{ts.testimonial}"
-                br
-            .row.text-right.custName 
-                .col -#{ts.custName}
+            div.feedback
+                .row
+                    .col-2
+                        img(src='./images/blank-profile-picture.png').profile 
+                    .col-10
+                        h4 " #{ts.testimonial} "
+                .row
+                    .col.text-right
+                        h5 #{ts.custName}
             br 
             hr  

@@ -5,18 +5,22 @@ window.onload=function()
     $('#serviceMsg').hide();
     $('#resServiceMsg').hide();
     $('#hidden').hide();
+    $('.galleryPic').fadeIn("slow");
 }
 
 function cleanOffice()
 {   
     var cleanOffice = document.getElementById("cleanOffice");
     var officeSelected;
+    
+    //Come back and fix
+    var officeOnly = document.getElementsByName("officeOnly").innerHTML;
 
     if(cleanOffice.click)
     {
         officeSelected=true;
         residenceSelected=false;
-        $('#showOfficeServices').show();
+        $('#showOfficeServices').slideToggle();
         document.getElementById('showOfficeServices').scrollIntoView();
     }
 }
@@ -28,8 +32,8 @@ function cleanResidence()
     if(cleanResidence.click)
     {   
         residenceSelected=true;
-        officeSelected=false;
-        $('#showResidentialServices').show();   
+        officeSelected=false;  
+        $('#showResidentialServices').slideToggle(); 
         document.getElementById('showResidentialServices').scrollIntoView();
     }
 }
@@ -39,17 +43,17 @@ function displayServiceDetails()
     //Display details for service
     let serviceArray = 
         [
-            {"serviceName":"Window cleaning", "serviceDetails":"Powerful window cleaning that will leave your window view crystal clear!"},
-            {"serviceName":"Office cleaning", "serviceDetails":"We clean your entire office from the bottom floor to the top floor and everything in between!"},
-            {"serviceName":"Sweeping \& mopping cleaning", "serviceDetails":"We'll come sweep and mop for those times in between cleaning!"},
-            {"serviceName":"Vacuum \& shampoo", "serviceDetails":"We vacuum and shampoo also!"},
-            {"serviceName":"Restroom cleaning", "serviceDetails":"Yes, we clean restrooms too!"},
-            {"serviceName":"Smoke area \& break room cleaning", "serviceDetails":"We clear your break room and smoke areas of unwanted items, trash, cigarettes, etc.!"},
-            {"serviceName":"Basement \& events room cleanup", "serviceDetails":"After a big party or event, who wants to clean up? Call us! We'll do it for you!"},
-            {"serviceName":"Carpet \& Rug cleaning \& shampooing", "serviceDetails":"We provide a very detailed cleaning of carpets and rugs."},
-            {"serviceName":"Room cleaning", "serviceDetails":"We can come clean one room for you..."},
-            {"serviceName":"Residence cleaning", "serviceDetails":"...or we can clean your entire residence for you!"},
-            {"serviceName":"Power washing(outside)", "serviceDetails":"We also do power washing for the outside of your house."}
+            {"serviceName":"Window Cleaning", "serviceDetails":"Powerful window cleaning that will leave your window view crystal clear!"},
+            {"serviceName":"Office Cleaning", "serviceDetails":"We clean your entire office from the bottom floor to the top floor and everything in between!"},
+            {"serviceName":"Sweeping \& Mopping", "serviceDetails":"We'll come sweep and mop for those times in between cleaning!"},
+            {"serviceName":"Vacuum \& Shampoo", "serviceDetails":"We vacuum and shampoo also!"},
+            {"serviceName":"Restroom Cleaning", "serviceDetails":"Yes, we clean restrooms too!"},
+            {"serviceName":"Smoke Area \& Breakroom cleaning", "serviceDetails":"We clear your break room and smoke areas of unwanted items, trash, cigarettes, etc.!"},
+            {"serviceName":"Basement \& Event Room cleanup", "serviceDetails":"After a big party or event, who wants to clean up? Call us! We'll do it for you!"},
+            {"serviceName":"Carpet \& Rug cleaning/shampooing", "serviceDetails":"We provide a very detailed cleaning of carpets and rugs."},
+            {"serviceName":"Room Cleaning", "serviceDetails":"We can come clean one room for you..."},
+            {"serviceName":"(Entire) Residence Cleaning", "serviceDetails":"...or we can clean your entire residence for you!"},
+            {"serviceName":"Power Washing (outside)", "serviceDetails":"We also do power washing for the outside of your house."}
         ];
 
     var displayServiceMsg = document.getElementById("serviceMsg");
@@ -64,7 +68,7 @@ function displayServiceDetails()
         if(radioButtons[i].checked)
         {    
             if(thisBtnValue==serviceArray[i].serviceName)
-            {   displayServiceMsg.innerHTML=serviceArray[i].serviceDetails; }   
+            {   displayServiceMsg.innerHTML=serviceArray[i].serviceDetails;     }   
         }  
     }
     $('#serviceMsg').show();
@@ -75,17 +79,17 @@ function displayResidentialServiceDetails()
         //Display details for service
         let serviceArray = 
         [
-            {"serviceName":"Window cleaning", "serviceDetails":"Powerful window cleaning that will leave your window view crystal clear!"},
-            {"serviceName":"Office cleaning", "serviceDetails":"We clean your entire office from the bottom floor to the top floor and everything in between!"},
-            {"serviceName":"Sweeping \& mopping cleaning", "serviceDetails":"We'll come sweep and mop for those times in between cleaning!"},
-            {"serviceName":"Vacuum \& shampoo", "serviceDetails":"We vacuum and shampoo also!"},
-            {"serviceName":"Restroom cleaning", "serviceDetails":"Yes, we clean restrooms too!"},
-            {"serviceName":"Smoke area \& break room cleaning", "serviceDetails":"We clear your break room and smoke areas of unwanted items, trash, cigarettes, etc.!"},
-            {"serviceName":"Basement \& events room cleanup", "serviceDetails":"After a big party or event, who wants to clean up? Call us! We'll do it for you!"},
-            {"serviceName":"Carpet \& Rug cleaning \& shampooing", "serviceDetails":"We provide a very detailed cleaning of carpets and rugs."},
-            {"serviceName":"Room cleaning", "serviceDetails":"We can come clean one room for you..."},
-            {"serviceName":"Residence cleaning", "serviceDetails":"...or we can clean your entire residence for you!"},
-            {"serviceName":"Power washing(outside)", "serviceDetails":"We also do power washing for the outside of your house."}
+            {"serviceName":"Window Cleaning", "serviceDetails":"Powerful window cleaning that will leave your window view crystal clear!"},
+            {"serviceName":"Office Cleaning", "serviceDetails":"We clean your entire office from the bottom floor to the top floor and everything in between!"},
+            {"serviceName":"Sweeping \& Mopping", "serviceDetails":"We'll come sweep and mop for those times in between cleaning!"},
+            {"serviceName":"Vacuum \& Shampoo", "serviceDetails":"We vacuum and shampoo also!"},
+            {"serviceName":"Restroom Cleaning", "serviceDetails":"Yes, we clean restrooms too!"},
+            {"serviceName":"Smoke Area \& Breakroom cleaning", "serviceDetails":"We clear your break room and smoke areas of unwanted items, trash, cigarettes, etc.!"},
+            {"serviceName":"Basement \& Event Room cleanup", "serviceDetails":"After a big party or event, who wants to clean up? Call us! We'll do it for you!"},
+            {"serviceName":"Carpet \& Rug cleaning/shampooing", "serviceDetails":"We provide a very detailed cleaning of carpets and rugs."},
+            {"serviceName":"Room Cleaning", "serviceDetails":"We can come clean one room for you..."},
+            {"serviceName":"(Entire) Residence Cleaning", "serviceDetails":"...or we can clean your entire residence for you!"},
+            {"serviceName":"Power Washing (outside)", "serviceDetails":"We also do power washing for the outside of your house."}
         ];
 
     var displayServiceMsg = document.getElementById("resServiceMsg");
@@ -124,12 +128,17 @@ function checkInfo()
 
         if(radBtns[i].checked)
         {
+            //Make sure package has been selected 
+            var pkgOptions = document.getElementsByName("stdSelectedPkg");
 
             $('#hidden').show();
             document.getElementById('hidden').scrollIntoView();
             addPkgNo.value=packNo;
             addPkgFreq.value=packFreq;
             showPkgPrice.value=price;
+
+            var nameFocus = document.getElementsByName('stdName');
+            nameFocus.focus();
         }
     }
 }
@@ -143,8 +152,26 @@ function submittedStandard()
     {   window.location.assign('/quote');   }
 }
 
-// function validatePhone(regPhone)
+//Come back to this -- validate phone number; stay on current page if invalid, and
+//focus on phone number field -- otherwise, proceed to saved quote page.
+function validatePhone(phoneNum)
+{
+    phoneNum = document.getElementById('phoneNum').value;
+    var regExp = new RegExp(/\d{3}\d{3}\d{4}/);
+    if(!phoneNum.match(regExp))
+    {   
+        alert("Please enter a valid phone number.");  
+        window.location='/Quote';  
+        document.getElementById('phoneNum').focus();
+    }
+    else
+    {   
+        document.getElementsByName("CustomRequestForm").submit();   
+        window.location='/savedCustomRequest';
+    }
+}
+
+// function transformIt()
 // {
-//     var regPhone=document.getElementById('regPhone').text;
-//     console.log(regPhone);
+//     document.getElementsByClassName('.col-3.test').style.backgroundColor="red";
 // }

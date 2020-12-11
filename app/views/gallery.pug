@@ -1,28 +1,93 @@
 //- Gallery page
 
 extends layout
+block append head
+    script(src='./javascripts/jquery-3.3.1.js')
+    script(src='./javascripts/jsFunctions.js')
 block content
+    #header
+        nav.nav-pills.nav-fill.rounded
+            ul.nav
+                li.nav-item.nav-link
+                    a(href='/')
+                        |Home
+                li.nav-item.nav-link
+                    a(href='/services')
+                        |Our Services
+                li.nav-item.nav-link.active 
+                    a(href='/gallery')
+                        |Gallery
+                li.nav-item.nav-link
+                    a(href='/quote')
+                        |Request a Quote
+                li.nav-item.nav-link
+                    a(href='/feedback')
+                        |Feedback
     .container 
-        h4.text-center We Love to Clean!
-        .row 
-            .col
-                img(src='./images/cleaning1.jpg').img-thumbnail 
-            .col 
-                img(src='./images/cleaning2.jpg').img-thumbnail
-            .col
-                img(src='./images/cleaning3.jpg').img-thumbnail
+        h1.text-center We Love to Clean!
+        .row
+            .col.text-center
+                h3(style='font-style:underline') CARPET
         .row
             .col
-                img(src='./images/cleaning4.jpg').img-thumbnail
+                h3 BEFORE...
+                img(src='./images//beforeCarpet.png').galleryPic
             .col
-                img(src='./images/cleaning5.jpg').img-thumbnail
+                h3 ...AFTER
+                img(src='./images/afterCarpet.png').galleryPic
+        hr
+        .row
+            .col.text-center
+                h3(style='font-style:underline') BATHROOMS
         .row
             .col
-                img(src='./images/cleaning6.jpg').img-thumbnail
+                h3 BEFORE...
+                img(src='./images//beforeBathroom.png').galleryPic
             .col
-                img(src='./images/cleaning7.jpg').img-thumbnail
-            .col
-                img(src='./images/cleaning8.jpg').img-thumbnail
+                h3 ...AFTER
+                img(src='./images/afterBathroom.png').galleryPic
+        hr
+        .row
+            .col.text-center
+                h3(style='font-style:underline') OFFICE BUILDINGS
         .row
             .col
-                img(src='./images/cleaning9.jpg').img-thumbnail
+                h3 BEFORE...
+                img(src='./images//beforeOffice.png').galleryPic
+            .col
+                h3 ...AFTER
+                img(src='./images/afterOffice.png').galleryPic
+        hr
+        .row
+            .col.text-center
+                h3(style='font-style:underline') STAIRS
+        .row
+            .col
+                h3 BEFORE...
+                img(src='./images//beforeStairs.png').galleryPic
+            .col
+                h3 ...AFTER
+                img(src='./images/afterStairs.png').galleryPic
+
+        //- .row 
+        //-     .col
+        //-         img(src='./images/cleaning1.jpg').img-thumbnail 
+        //-     .col 
+        //-         img(src='./images/cleaning2.jpg').img-thumbnail
+        //-     .col
+        //-         img(src='./images/cleaning3.jpg').img-thumbnail
+        //- .row
+        //-     .col
+        //-         img(src='./images/cleaning4.jpg').img-thumbnail
+        //-     .col
+        //-         img(src='./images/cleaning5.jpg').img-thumbnail
+        //- .row
+        //-     .col
+        //-         img(src='./images/cleaning6.jpg').img-thumbnail
+        //-     .col
+        //-         img(src='./images/cleaning7.jpg').img-thumbnail
+        //-     .col
+        //-         img(src='./images/cleaning8.jpg').img-thumbnail
+        //- .row
+        //-     .col
+        //-         img(src='./images/cleaning9.jpg').img-thumbnail

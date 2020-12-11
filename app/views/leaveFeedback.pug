@@ -5,7 +5,7 @@ block content
     .container
         h4.text-center Leave Feedback Here
         br
-        form(action='/savingFeedback', method='post').form-group
+        form.requestForm(action='/savingFeedback', method='post').form-group
             .row
                 .col 
                     label Name: 
@@ -16,5 +16,9 @@ block content
                     br
                     textarea(cols='20' rows='4' name='testimonial' required).form-control
             .row
-                .col
-                    input(type='submit' value='Send Feedback').form-control
+                .col.text-center
+                    br
+                    input(type='submit' value='Send Feedback' style='width: 50%').button.btn
+        //- .row
+        //-     .col.text-right
+        //-         a(href='/loginSuccess').backlink Back
